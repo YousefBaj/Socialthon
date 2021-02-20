@@ -56,7 +56,10 @@ class _InitiativesState extends State<Initiatives> {
             ),
           ),
           appBar: AppBar(
-            backgroundColor: Color(0xffffcd18),
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(
+              color: Color(0xffF74C5F),
+            ),
             title: Text(
               "برنامج أطلق",
               style: styleText.pageTitle,
@@ -77,16 +80,14 @@ class _InitiativesState extends State<Initiatives> {
                       onTap: () => Navigator.pushNamed(context, Society.id),
                       child: Container(
                         decoration: BoxDecoration(
-                          border:
-                              Border.all(color: Color(0xffa81950), width: 0.4),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
-                              spreadRadius: 2,
-                              blurRadius: 3,
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 1,
+                              blurRadius: 1,
                               offset:
-                                  Offset(0, 1), // changes position of shadow
+                                  Offset(0, 0), // changes position of shadow
                             ),
                           ],
                           borderRadius:
@@ -125,14 +126,13 @@ class _InitiativesState extends State<Initiatives> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xffa81950), width: 0.4),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
-                          color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 2,
-                          blurRadius: 3,
-                          offset: Offset(0, 1), // changes position of shadow
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 1,
+                          blurRadius: 1,
+                          offset: Offset(0, 0), // changes position of shadow
                         ),
                       ],
                       borderRadius:
@@ -301,7 +301,7 @@ class _InitiativesState extends State<Initiatives> {
                 Icon(
                   Icons.assignment_turned_in_outlined,
                   size: 100,
-                  color: Color(0xff4bad11),
+                  color: Color(0xffF74C5F),
                 ),
                 Text(
                   'تم حجز الموعد',

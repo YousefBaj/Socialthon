@@ -32,12 +32,16 @@ class _HomeState extends State<Home> {
         top: false,
         child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Color(0xffffcd18),
-            title: Text(
-              "أخبار",
-              style: styleText.pageTitle,
+            backgroundColor: Colors.white,
+            title: Container(
+              width: 50,
+              height: 50,
+              child: Image.asset('assets/img/splash.png'),
             ),
-            elevation: 10,
+            elevation: 0,
+            iconTheme: IconThemeData(
+              color: Color(0xffF74C5F),
+            ),
           ),
           body: SingleChildScrollView(
             child: Padding(
@@ -71,7 +75,7 @@ class _HomeState extends State<Home> {
                                         child: Text(
                                           item.title,
                                           textAlign: TextAlign.right,
-                                          style: styleText.extraBoldText,
+                                          style: styleText.boldText,
                                         ),
                                       ),
                                     ),
@@ -92,8 +96,8 @@ class _HomeState extends State<Home> {
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: _current == index
-                                ? Color.fromRGBO(0, 0, 0, 0.9)
-                                : Color.fromRGBO(0, 0, 0, 0.4),
+                                ? Color.fromRGBO(247, 76, 95, 0.9)
+                                : Color.fromRGBO(247, 76, 95, 0.4),
                           ),
                         );
                       }).toList(),
@@ -109,7 +113,8 @@ class _HomeState extends State<Home> {
                         RaisedButton(
                           child: Text(
                             "المزيد",
-                            style: styleText.regularText,
+                            style: styleText.regularText
+                                .copyWith(color: Color(0xffF74C5F)),
                           ),
                           color: Colors.white,
                           elevation: 0,
@@ -134,7 +139,7 @@ class _HomeState extends State<Home> {
                               child: Card(
                                 child: index % 2 == 0
                                     ? Image.asset('assets/img/img5.jpg')
-                                    : Image.asset('assets/img/img6.jpg'),
+                                    : Image.asset('assets/img/img10.png'),
                               ),
                             ),
                           );
@@ -147,7 +152,7 @@ class _HomeState extends State<Home> {
                     Container(
                       width: MediaQuery.of(context).size.width,
                       child: Text(
-                        "المبادرات",
+                        "جميع المبادرات",
                         textAlign: TextAlign.right,
                         style: styleText.boldText,
                       ),
@@ -162,9 +167,9 @@ class _HomeState extends State<Home> {
                         itemBuilder: (BuildContext context, int index) {
                           return Column(
                             children: [
-                              initiativesCard(),
+                              initiativesCard(index),
                               SizedBox(
-                                height: 40,
+                                height: 20,
                               ),
                             ],
                           );
@@ -183,7 +188,7 @@ class _HomeState extends State<Home> {
                 DrawerHeader(
                   child: Text('Drawer Header'),
                   decoration: BoxDecoration(
-                    color: Color(0xffFFD918),
+                    color: Color(0xffF74C5F),
                   ),
                 ),
                 ListTile(
@@ -212,7 +217,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget initiativesCard() {
+  Widget initiativesCard(int number) {
     return GestureDetector(
       onTap: () => Navigator.pushNamed(context, Initiatives.id),
       child: Padding(
@@ -220,14 +225,13 @@ class _HomeState extends State<Home> {
         child: Container(
           height: 120,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xffa81950), width: 0.4),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 3,
-                offset: Offset(0, 1), // changes position of shadow
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: Offset(0, 0), // changes position of shadow
               ),
             ],
             borderRadius: BorderRadius.all(const Radius.circular(10.0)),
@@ -245,7 +249,9 @@ class _HomeState extends State<Home> {
                       const Radius.circular(10),
                     ),
                   ),
-                  child: Image.asset('assets/img/img2.jpg'),
+                  child: number % 2 == 0
+                      ? Image.asset('assets/img/img7.jpg')
+                      : Image.asset('assets/img/img8.jpg'),
                 ),
                 SizedBox(
                   width: 20,
@@ -308,12 +314,12 @@ class _HomeState extends State<Home> {
               splashColor: Colors.transparent,
               child: Text(
                 'المزيد',
-                style: styleText.regularText,
+                style: styleText.regularText.copyWith(color: Color(0xffF74C5F)),
               ),
             ),
           ],
         ),
-        initiativesCard(),
+        initiativesCard(2),
       ],
     );
   }

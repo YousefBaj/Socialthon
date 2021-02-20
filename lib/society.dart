@@ -16,13 +16,15 @@ class _SocietyState extends State<Society> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "ماجد للتنمية",
-          style: styleText.pageTitle,
-        ),
-        elevation: 0,
-        backgroundColor: Color(0xffffcd18),
-      ),
+          title: Text(
+            "ماجد للتنمية",
+            style: styleText.pageTitle,
+          ),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(
+            color: Color(0xffF74C5F),
+          )),
       body: SingleChildScrollView(
         padding: EdgeInsets.only(bottom: 30),
         child: Container(
@@ -132,7 +134,9 @@ class _SocietyState extends State<Society> {
               splashColor: Colors.transparent,
               child: Text(
                 'المزيد',
-                style: styleText.regularText,
+                style: styleText.regularText.copyWith(
+                  color: Color(0xffF74C5F),
+                ),
               ),
             ),
           ],
@@ -161,7 +165,9 @@ class _SocietyState extends State<Society> {
               splashColor: Colors.transparent,
               child: Text(
                 'المزيد',
-                style: styleText.regularText,
+                style: styleText.regularText.copyWith(
+                  color: Color(0xffF74C5F),
+                ),
               ),
             ),
           ],
@@ -179,14 +185,13 @@ class _SocietyState extends State<Society> {
         child: Container(
           height: 120,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xffa81950), width: 0.4),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.5),
-                spreadRadius: 2,
-                blurRadius: 3,
-                offset: Offset(0, 1), // changes position of shadow
+                color: Colors.grey.withOpacity(0.2),
+                spreadRadius: 1,
+                blurRadius: 1,
+                offset: Offset(0, 0), // changes position of shadow
               ),
             ],
             borderRadius: BorderRadius.all(const Radius.circular(10.0)),
