@@ -179,7 +179,7 @@ class _SocietyState extends State<Society> {
         child: Container(
           height: 120,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xffa81950), width: 1),
+            border: Border.all(color: Color(0xffa81950), width: 0.4),
             color: Colors.white,
             boxShadow: [
               BoxShadow(

@@ -21,7 +21,7 @@ class _InitiativesState extends State<Initiatives> {
           backgroundColor: Colors.white,
           bottomSheet: Container(
             height: 80,
-            color: Color(0xffffcd18).withAlpha(70),
+            color: Color(0xffa81950).withAlpha(70),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10.0, right: 20, left: 20),
               child: Row(
@@ -40,12 +40,13 @@ class _InitiativesState extends State<Initiatives> {
                         borderRadius: BorderRadius.all(
                           Radius.circular(10),
                         ),
-                        color: Color(0xffffcd18),
+                        color: Color(0xffa81950),
                       ),
                       child: Center(
                         child: Text(
                           "تسجيل",
-                          style: styleText.regularText,
+                          style: styleText.regularText
+                              .copyWith(color: Colors.white),
                         ),
                       ),
                     ),
@@ -77,7 +78,7 @@ class _InitiativesState extends State<Initiatives> {
                       child: Container(
                         decoration: BoxDecoration(
                           border:
-                              Border.all(color: Color(0xffa81950), width: 1),
+                              Border.all(color: Color(0xffa81950), width: 0.4),
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
@@ -124,7 +125,7 @@ class _InitiativesState extends State<Initiatives> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xffa81950), width: 1),
+                      border: Border.all(color: Color(0xffa81950), width: 0.4),
                       color: Colors.white,
                       boxShadow: [
                         BoxShadow(
@@ -235,18 +236,39 @@ class _InitiativesState extends State<Initiatives> {
                     ),
                   ),
                   Container(
-                    height: 150,
+                    height: 100,
                     child: ListView.builder(
                       itemCount: 5,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (BuildContext context, int index) {
-                        return Container(
-                          width: 150,
-                          child: Card(
-                            child: index % 2 == 0
-                                ? Image.asset('assets/img/img5.jpg')
-                                : Image.asset('assets/img/img6.jpg'),
-                          ),
+                        return Row(
+                          children: [
+                            Container(
+                              height: 100,
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.grey.withOpacity(0.08),
+                                    spreadRadius: 1,
+                                    blurRadius: 1,
+                                    offset: Offset(
+                                        0, 0), // changes position of shadow
+                                  ),
+                                ],
+                                borderRadius: BorderRadius.all(
+                                    const Radius.circular(10.0)),
+                              ),
+                              width: 100,
+                              child: Card(
+                                child: index % 2 == 0
+                                    ? Image.asset('assets/img/img5.jpg')
+                                    : Image.asset('assets/img/img6.jpg'),
+                              ),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                          ],
                         );
                       },
                     ),

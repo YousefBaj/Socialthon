@@ -121,7 +121,7 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                     Container(
-                      height: 150,
+                      height: 100,
                       child: ListView.builder(
                         itemCount: 5,
                         scrollDirection: Axis.horizontal,
@@ -130,7 +130,7 @@ class _HomeState extends State<Home> {
                             onTap: () =>
                                 Navigator.pushNamed(context, Society.id),
                             child: Container(
-                              width: 150,
+                              width: 100,
                               child: Card(
                                 child: index % 2 == 0
                                     ? Image.asset('assets/img/img5.jpg')
@@ -220,7 +220,7 @@ class _HomeState extends State<Home> {
         child: Container(
           height: 120,
           decoration: BoxDecoration(
-            border: Border.all(color: Color(0xffa81950), width: 1),
+            border: Border.all(color: Color(0xffa81950), width: 0.4),
             color: Colors.white,
             boxShadow: [
               BoxShadow(
