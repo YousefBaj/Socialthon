@@ -8,8 +8,10 @@ class splash extends StatelessWidget {
   static const String id = 'splash';
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 3),
-        () => {Navigator.pushReplacementNamed(context, Home.id)});
+    Timer(
+      Duration(seconds: 3),
+      () => Navigator.pushNamed(context, Home.id),
+    );
     return Container(
       color: Color(0xffa81950),
       child: Image(
